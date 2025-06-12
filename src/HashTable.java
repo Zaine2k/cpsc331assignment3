@@ -1,10 +1,11 @@
 import java.util.LinkedList;
 
+// Question 2
+
 public class HashTable {
     private static final int LEN = 8;
     private LinkedList<Student>[] table;
 
-    @SuppressWarnings("unchecked")
     public HashTable() {
         table = new LinkedList[LEN];
         for (int i = 0; i < LEN; i++) {
@@ -17,7 +18,7 @@ public class HashTable {
         return id % LEN;
     }
 
-    // Search
+    // Search Function
     public boolean search(int id) {
         int index = hashValue(id);
         for (Student s : table[index]) {
@@ -28,7 +29,7 @@ public class HashTable {
         return false;
     }
 
-    // Retrieve
+    // Retrieve Function
     public String retrieve(int id) {
         int index = hashValue(id);
         for (Student s : table[index]) {
@@ -36,11 +37,11 @@ public class HashTable {
                 return s.name;
             }
         }
-        System.out.println("No student with ID " + id + " found.");
+        System.out.println("Can't find student with ID " + id + ".");
         return null;
     }
 
-    // Insert or Update
+    // Insert or Update Function
     public void insert(int id, String name) {
         int index = hashValue(id);
         for (Student s : table[index]) {
@@ -54,7 +55,7 @@ public class HashTable {
         table[index].add(new Student(id, name));
     }
 
-    // Delete
+    // Delete Function
     public void delete(int id) {
         int index = hashValue(id);
         for (int i = 0; i < table[index].size(); i++) {
@@ -64,11 +65,10 @@ public class HashTable {
                 return;
             }
         }
-        System.out.println("No student with ID " + id + " found.");
+        System.out.println("Can't find Student with ID " + id + ".");
     }
 
-    // ToString
-    @Override
+    // toString Function
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < LEN; i++) {

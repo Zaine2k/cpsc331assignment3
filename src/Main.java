@@ -1,6 +1,5 @@
-import java.util.LinkedList;
+import java.util.*;
 public class Main {
-
     public static void main(String[] args) {
         // Question 2
         HashTable db = new HashTable();
@@ -46,5 +45,38 @@ public class Main {
         // Step 9
         // Call the ToString function again to print the updated database.
         System.out.println(db.toString());
+
+
+        // Question 3
+        HeapSort hs = new HeapSort();
+
+        // Generate Arrays
+
+        // Random array w/ size 1000
+        Random rand = new Random();
+        int[] randomArr = new int[1000];
+        for (int i = 0; i < 1000; i++) {
+            randomArr[i] = rand.nextInt(10000);
+        }
+
+        // Sorted array w/ size 1000
+        int[] sortedArr = new int[1000];
+        for (int i = 0; i < 1000; i++) {
+            sortedArr[i] = i;
+        }
+
+        System.out.println("1 -> Heapify Swap Count");
+        System.out.println("2 -> Total Swap Count");
+
+        // Test arrays
+        System.out.println("Random Array Results:");
+        hs.run(randomArr);
+
+        System.out.println("Sorted Array Results:");
+        hs.run(sortedArr);
+
+
+        // Question 4
+
     }
 }

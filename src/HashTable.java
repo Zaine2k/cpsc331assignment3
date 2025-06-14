@@ -51,7 +51,7 @@ public class HashTable {
                 return;
             }
         }
-        // Insert new student
+        // Add new student
         table[index].add(new Student(id, name));
     }
 

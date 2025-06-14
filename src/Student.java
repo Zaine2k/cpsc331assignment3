@@ -1,5 +1,6 @@
 // Question 2
 
+// Student attributes
 public class Student {
     int id;
     String name;
